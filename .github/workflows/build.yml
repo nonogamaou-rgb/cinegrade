@@ -1,0 +1,18 @@
+name: Build
+on: [workflow_dispatch, push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get AML header
+        run: git clone --depth 1 https://github.com/RusJJ/AML aml
+      - name: Build
+        run: |
+          H=$(find aml -name amlmod.h | head -1)
+          INC=$(dirname $(dirname $H))
+          $ANDROID_NDK_HOME/ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=jni/Android.mk NDK_APPLICATION_MK=jni/Application.mk AML_INC=$GITHUB_WORKSPACE/$INC
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CineGrade
+          path: libs/arm64-v8a/libCineGrade.so
