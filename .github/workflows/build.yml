@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Get AML header
-        run: git clone --depth 1 https://github.com/RusJJ/AML aml
+        run: git clone --depth 1 https://github.com/RusJJ/AndroidModLoader aml
       - name: Build
         run: |
           H=$(find aml -name amlmod.h | head -1)
