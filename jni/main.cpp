@@ -6,12 +6,12 @@
 MYMOD(net.local.cinegrade, CineGrade, 1.0, me)
 
 // ===== PENGATURAN =====
-#define BRIGHTNESS "0.03"
-#define CONTRAST   "1.10"
-#define SATURATION "1.10"
-#define WARM       "vec3(1.06,1.0,0.92)"
-#define SHADOW     "0.18"
-#define BLOOM      "0.30"
+#define BRIGHTNESS "0.00"
+#define CONTRAST   "1.08"
+#define SATURATION "0.98"
+#define WARM       "vec3(1.03,1.0,0.95)"
+#define SHADOW     "0.15"
+#define BLOOM      "0.20"
 // ======================
 
 static const char* GRADE =
